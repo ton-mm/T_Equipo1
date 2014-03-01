@@ -409,6 +409,10 @@ public class tarea extends JFrame implements Runnable, KeyListener,MouseListener
                 caja.setPosY((Integer.parseInt(arr[8])));
                 //perdida = (Integer.parseInt(arr[10]));
                 //pico = (Boolean.parseBoolean(arr[11]));
+                btiempo = (Boolean.parseBoolean(arr[9]));
+                clic = (Boolean.parseBoolean(arr[10]));
+                score = (Integer.parseInt(arr[11]));
+                intentos = (Integer.parseInt(arr[12]));
                 
                 fileIn.close();
           }
@@ -425,6 +429,10 @@ public class tarea extends JFrame implements Runnable, KeyListener,MouseListener
               caja.setPosY(0);
               //perdida = 0;
               //pico = false;
+              btiempo = false;
+              clic = false;
+              score = 0;
+              intentos = 0;
               
               
           }
@@ -441,7 +449,7 @@ public class tarea extends JFrame implements Runnable, KeyListener,MouseListener
             
             
             PrintWriter fileOut = new PrintWriter(new FileWriter(nombreArchivo));
-            fileOut.println(""+velocidadx+","+velocidady+","+angulo+","+tiempo+","+vidas+","+pelota.getPosX()+","+pelota.getPosY()+","+caja.getPosX()+","+caja.getPosY());
+            fileOut.println(""+velocidadx+","+velocidady+","+angulo+","+tiempo+","+vidas+","+pelota.getPosX()+","+pelota.getPosY()+","+caja.getPosX()+","+caja.getPosY()+","+btiempo+","+clic+","+score+","+intentos);
             fileOut.close();
            
            // guardar = false;
